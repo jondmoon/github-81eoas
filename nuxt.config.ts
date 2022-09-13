@@ -7,7 +7,7 @@ export default defineNuxtConfig({
     '@fortawesome/fontawesome-svg-core/styles.css',
   ],
   build: {
-    transpile: ['vuetify'],
+    transpile: ['vuetify', '@fortawesome/free-solid-svg-icons'],
   },
   vite: {
     define: {
