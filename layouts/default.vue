@@ -3,7 +3,7 @@
     <v-app-bar>
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
-      <v-toolbar-title>Game-Track</v-toolbar-title>
+      <v-toolbar-title>Scots Portal</v-toolbar-title>
     </v-app-bar>
 
     <v-navigation-drawer v-model="drawer">
