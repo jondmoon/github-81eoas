@@ -10,16 +10,16 @@
       <v-list>
         <template
           v-for="{ icon, title, link, href, children, base } in navItems"
-          :key="link || '-' || href"
+          :key="title"
         >
           <v-list-item v-if="link" :to="link">
-            <template v-slot:prepend>
+            <template v-if="icon" v-slot:prepend>
               <v-icon>{{ icon }}</v-icon>
             </template>
             <v-list-item-title>{{ title }}</v-list-item-title>
           </v-list-item>
           <v-list-item v-else-if="href" :href="href">
-            <template v-slot:prepend>
+            <template v-if="icon" v-slot:prepend>
               <v-icon>{{ icon }}</v-icon>
             </template>
             <v-list-item-title>{{ title }}</v-list-item-title>
@@ -27,7 +27,7 @@
           <v-list-group v-else-if="children.length > 0">
             <template v-slot:activator="{ on }">
               <v-list-item v-on="on">
-                <template v-slot:prepent>
+                <template v-slot:prepend>
                   <v-icon>{{ icon }}</v-icon>
                 </template>
                 <v-list-item-title>{{ title }}</v-list-item-title>
@@ -35,11 +35,11 @@
             </template>
             <v-list-item
               v-for="{ icon, title, link, href } in children"
-              :key="link"
+              :key="title"
               :to="link ? base + link : ''"
               :href="href"
             >
-              <template v-slot:prepend>
+              <template v-if="icon" v-slot:prepend>
                 <v-icon>{{ icon }}</v-icon>
               </template>
               <v-list-item-title>{{ title }}</v-list-item-title>
@@ -87,45 +87,45 @@ const navItems = ref([
   {
     icon: 'fas fa-calendar',
     title: 'Calendar',
-    base: '/calendar'
+    base: '/calendar',
     children: [
       {
         icon: '',
         title: 'Class Calendar',
-        link: '/schedule'
+        link: '/schedule',
       },
       {
         icon: '',
         title: 'Class Schedule',
-        link: '/schedule'
+        link: '/schedule',
       },
       {
         icon: '',
         title: 'Term Setup',
-        link: '/setup'
-      }
+        link: '/setup',
+      },
     ],
   },
   {
     icon: 'fas fa-file-alt',
     title: 'Forms',
-    base: '/forms'
+    base: '/forms',
     children: [
       {
         icon: '',
         title: 'List',
-        link: '/'
+        link: '/',
       },
       {
         icon: '',
         title: 'Admin',
-        link: '/admin'
+        link: '/admin',
       },
       {
         icon: '',
         title: 'Option Editor',
-        link: '/admin/options'
-      }
+        link: '/admin/options',
+      },
     ],
   },
 ]);
