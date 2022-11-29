@@ -1,13 +1,13 @@
 <template>
   <v-card class="ma-4">
     <v-card-title>Calendar Schedule</v-card-title>
-    <schedule
+    <CalendarSchedule
       :cell-width="80"
       :rows="rows"
       :start-hour="7"
       :end-hour="20"
       @click="openClassDetails"
-    ></schedule>
+    ></CalendarSchedule>
   </v-card>
 </template>
 <script setup>
