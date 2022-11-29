@@ -12,25 +12,23 @@
           v-for="{ icon, title, link, href, children, base } in navItems"
           :key="title"
         >
-          <v-list-item v-if="link" :to="link">
-            <template v-if="icon" v-slot:prepend>
-              <v-icon>{{ icon }}</v-icon>
-            </template>
-            <v-list-item-title>{{ title }}</v-list-item-title>
+          <v-list-item
+            v-if="link"
+            :to="link"
+            :prepend-icon="icon"
+            :title="title"
+          >
           </v-list-item>
-          <v-list-item v-else-if="href" :href="href">
-            <template v-if="icon" v-slot:prepend>
-              <v-icon>{{ icon }}</v-icon>
-            </template>
-            <v-list-item-title>{{ title }}</v-list-item-title>
+          <v-list-item
+            v-else-if="href"
+            :href="href"
+            :prepend-icon="icon"
+            :title="title"
+          >
           </v-list-item>
           <v-list-group v-else-if="children.length > 0">
-            <template v-slot:activator="{ on }">
-              <v-list-item v-on="on">
-                <template v-slot:prepend>
-                  <v-icon>{{ icon }}</v-icon>
-                </template>
-                <v-list-item-title>{{ title }}</v-list-item-title>
+            <template v-slot:activator="{ props }">
+              <v-list-item v-bind="props" :prepend-icon="icon" :title="title">
               </v-list-item>
             </template>
             <v-list-item
@@ -38,11 +36,9 @@
               :key="title"
               :to="link ? base + link : ''"
               :href="href"
+              :prepend-icon="icon"
+              :title="title"
             >
-              <template v-if="icon" v-slot:prepend>
-                <v-icon>{{ icon }}</v-icon>
-              </template>
-              <v-list-item-title>{{ title }}</v-list-item-title>
             </v-list-item>
           </v-list-group>
         </template>
@@ -54,7 +50,7 @@
     </v-main>
   </v-app>
 </template>
-
+<style></style>
 <script setup>
 const drawer = ref(false);
 const navItems = ref([
