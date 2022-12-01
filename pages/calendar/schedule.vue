@@ -453,8 +453,9 @@ async function loadClasses(start, end) {
 const showDetails = ref(false);
 const detail = reactive({});
 
-function openClassDetails(id) {
-  alert(id);
+function openClassDetails(e, id) {
+  console.log(e, id);
+  if (id) alert(id);
   // service.get(id).then((data) => {
   //   for (let l in data) {
   //     if (l === 'instructors') {

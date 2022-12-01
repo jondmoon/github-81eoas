@@ -88,7 +88,7 @@ const navItems = ref([
       {
         icon: '',
         title: 'Class Calendar',
-        link: '/schedule',
+        link: '/classes',
       },
       {
         icon: '',
