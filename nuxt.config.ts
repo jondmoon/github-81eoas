@@ -15,9 +15,19 @@ export default defineNuxtConfig({
   modules: [
     [
       '@pinia/nuxt',
+      'nuxt-feathers-pinia',
       {
         autoImports: ['defineStore'],
       },
     ],
   ],
+  imports: {
+    dirs: [
+      'stores',
+      'models',
+    ]
+  },
+  typescript: {
+    shim: false,
+  },
 });
