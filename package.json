@@ -7,15 +7,25 @@
     "preview": "nuxt preview"
   },
   "devDependencies": {
-    "nuxt": "3.0.0"
+    "@feathersjs/authentication-client": "^5.0.0-pre.34",
+    "@feathersjs/client": "^5.0.0-pre.34",
+    "@feathersjs/feathers": "^5.0.0-pre.34",
+    "@feathersjs/rest-client": "^5.0.0-pre.34",
+    "@feathersjs/socketio-client": "^5.0.0-pre.34",
+    "@pinia/nuxt": "^0.4.2",
+    "feathers-pinia": "^2.0.0-pre.4",
+    "nuxt": "3.0.0",
+    "pinia": "^2.0.28",
+    "socket.io-client": "^4.5.4"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
     "@fortawesome/free-regular-svg-icons": "^6.2.0",
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
     "@fortawesome/vue-fontawesome": "^3.0.1",
-    "@pinia/nuxt": "^0.4.2",
     "mdi": "^2.2.43",
+    "nuxt-feathers-pinia": "^0.0.1",
+    "ofetch": "^1.0.0",
     "sass": "^1.54.9",
     "vuetify": "^3.0.1"
   }
